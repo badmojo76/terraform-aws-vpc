@@ -46,7 +46,7 @@ resource "aws_security_group" "db" {
 
     vpc_id = aws_vpc.default.id
 
-    tags {
+    tags = {
         Name = "DBServerSG"
     }
 }
@@ -60,7 +60,7 @@ resource "aws_instance" "db-1" {
     subnet_id = aws_subnet.eu-west-1a-private.id
     source_dest_check = false
 
-    tags {
+    tags = {
         Name = "DB Server 1"
     }
 }
