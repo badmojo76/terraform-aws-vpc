@@ -1,5 +1,5 @@
 resource "aws_vpc" "default" {
-    provider = "us-east-1"
+    provider = us-east-1
     cidr_block = var.vpc_cidr
     enable_dns_hostnames = true
     tags = {
@@ -8,7 +8,7 @@ resource "aws_vpc" "default" {
 }
 
 resource "aws_internet_gateway" "default" {
-    provider = "us-east-1"
+    provider = us-east-1
     vpc_id = aws_vpc.default.id
 }
 
@@ -18,7 +18,7 @@ resource "aws_internet_gateway" "default" {
 resource "aws_security_group" "nat" {
     name = "vpc_nat"
     description = "Allow traffic to pass from the private subnet to the internet"
-    provider = "us-east-1"
+    provider = us-east-1
 
     ingress {
         from_port = 80
