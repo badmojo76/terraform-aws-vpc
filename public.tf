@@ -2,6 +2,7 @@
   Web Servers
 */
 resource "aws_security_group" "web" {
+    provider = "us-east-1"
     name = "vpc_web"
     description = "Allow incoming HTTP connections."
 

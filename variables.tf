@@ -5,13 +5,6 @@ variable "aws_secret_key" {}
 variable "aws_key_path" {}
 variable "aws_key_name" {}
 
-variable "amis" {
-    description = "AMIs by region"
-    default = {
-        eu-west-1 = "ami-f1810f86" # ubuntu 14.04 LTS
-    }
-}
-
 variable "vpc_cidr" {
     description = "CIDR for the whole VPC"
     default = "10.0.0.0/16"
